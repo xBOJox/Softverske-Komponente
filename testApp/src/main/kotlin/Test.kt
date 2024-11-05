@@ -1,6 +1,7 @@
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import spec.ReportInterface
+import java.io.File
 import java.io.InputStreamReader
 import java.util.*
 
@@ -45,13 +46,27 @@ fun main() {
 
     println(exporterServices.keys)
 
-    val inputStream = object {}.javaClass.getResourceAsStream("/data.json")
-    val reader = InputStreamReader(inputStream)
-    val data = prepareData(reader)
-    reader.close()
 
-    println(data)
+    val inputStream = File("data.json").inputStream()
 
-    exporterServices["XLS"]?.generateReport(data, "izlaz3.xlsx", true)
+    try {
+        val reader = InputStreamReader(inputStream)
+
+        val data = prepareData(reader)
+        reader.close()
+
+        println(data)
+
+        exporterServices.map {
+
+            it.value.generateReport(data, "kurac.${it.key.lowercase()}", true)
+        }
+    }
+    catch(e: Exception) {
+        e.printStackTrace()
+    }
+    println("Available services: ${exporterServices.keys}")
+
+
 
 }
