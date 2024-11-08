@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    implementation(project(":spec"))
+    implementation("rs.raf:spec:1.0.0")
     testImplementation(kotlin("test"))
 }
 
