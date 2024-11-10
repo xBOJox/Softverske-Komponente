@@ -64,6 +64,9 @@ dependencies {
     implementation("rs.raf:txtImpl:1.0.0")
     implementation("rs.raf:pdfImpl:1.0.0")
 
+    implementation("rs.raf:storageSpec:1.0.0")
+    implementation("rs.raf:storageImpl:1.0.0")
+
     implementation("com.google.code.gson:gson:2.10.1")
     testImplementation(kotlin("test"))
     implementation("org.apache.logging.log4j:log4j-core:2.24.1")

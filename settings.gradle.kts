@@ -8,3 +8,7 @@ include("csvImpl")
 include("excelImpl")
 include("txtImpl")
 include("pdfImpl")
+
+
+include("storageSpec")
+include("storageImpl")
