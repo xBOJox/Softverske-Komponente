@@ -4,3 +4,11 @@ plugins {
 rootProject.name = "Projekat"
 include("spec")
 include("testApp")
+include("csvImpl")
+include("excelImpl")
+include("txtImpl")
+include("pdfImpl")
+
+
+include("storageSpec")
+include("storageImpl")

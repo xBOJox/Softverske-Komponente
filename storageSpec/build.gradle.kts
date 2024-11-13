@@ -1,6 +1,5 @@
 plugins {
     kotlin("jvm")
-    `java-library`
     `maven-publish`
 }
 
@@ -9,6 +8,19 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    mavenLocal()
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"]) // If you're using the 'java' or 'kotlin' plugin
+
+            groupId = "rs.raf"
+            artifactId = "storageSpec"
+            version = "1.0.0"
+        }
+    }
 }
 
 dependencies {
@@ -17,17 +29,6 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
-}
-publishing {
-    publications {
-        create<MavenPublication>("mavenJava") {
-            from(components["java"]) // If you're using the 'java' or 'kotlin' plugin
-
-            groupId = "rs.raf"
-            artifactId = "spec"
-            version = "1.0.0"
-        }
-    }
 }
 kotlin {
     jvmToolchain(21)
