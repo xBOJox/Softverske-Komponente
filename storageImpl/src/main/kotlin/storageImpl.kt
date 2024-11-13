@@ -66,22 +66,28 @@ class storageImpl : StorageInterface{
 
     override fun moveFiles(sourcePath: String, targetPath: String) {
         val source = rootPath.resolve(sourcePath)
-        val target = rootPath.resolve(targetPath)
+        val targetDir = rootPath.resolve(targetPath)
+        val targetFile = targetDir.resolve(source.fileName.toString())
 
         if (!source.exists()) {
             throw NoSuchFileException(source.toString())
         }
 
-        if (!target.parent.exists()) {
-            target.parent.createDirectories()
+        if (!targetDir.exists()) {
+            targetDir.createDirectories()
         }
 
-        source.moveTo(target, overwrite = true)
+        source.moveTo(targetFile, overwrite = true)
     }
 
     override fun rename(oldPath: String, newName: String) {
         val source = rootPath.resolve(oldPath)
-        val target = source.resolveSibling(newName)
+        val targetDir = source.parent
+        val targetFileName = newName
+        val targetFileExtension = source.fileName.toString().substringAfterLast('.')
+        val newTargetFileName = "$targetFileName.$targetFileExtension"
+
+        val target = targetDir.resolve(newTargetFileName)
 
         if (!source.exists()) {
             throw NoSuchFileException(source.toString())

@@ -47,14 +47,6 @@ fun handleStorage(args: Array<String>) {
                 println("Created directories with pattern: ${args[1]}")
             }
 
-            "store" -> {
-                if (args.size < 3) throw IllegalArgumentException("Missing source files and target path")
-                val sourceFiles = args.slice(1..args.size - 2)
-                val targetPath = args.last()
-                storage.storeFiles(sourceFiles, targetPath)
-                println("Stored files in: $targetPath")
-            }
-
             "delete" -> {
                 if (args.size != 2) throw IllegalArgumentException("Usage: delete <path>")
                 storage.delete(args[1])
@@ -182,9 +174,9 @@ fun handleReport(args: Array<String>) {
         val reader = InputStreamReader(inputStream)
         val data = prepareData(reader)
         reader.close()
-
+        val storageFolder = "storage"
         exporterServices.forEach { (key, service) ->
-            val outputFile = "report.${key.lowercase()}"
+            val outputFile = "$storageFolder/report.${key.lowercase()}"
             service.generateReport(data, outputFile, true)
             println("Generated report: $outputFile")
         }

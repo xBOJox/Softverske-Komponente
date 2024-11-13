@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b8a9345-969b-423a-b48a-e212ef534662" name="Changes" comment="Poslednje Implementacije">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testApp/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/testApp/build.gradle.kts" afterDir="false" />
+    <list default="true" id="2b8a9345-969b-423a-b48a-e212ef534662" name="Changes" comment="move i rename change">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storageImpl/src/main/kotlin/storageImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/storageImpl/src/main/kotlin/storageImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testApp/src/main/kotlin/Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/testApp/src/main/kotlin/Test.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,6 +60,42 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Projekat" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Projekat" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build setup" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Projekat" type="f1a62948:ProjectNode" />
+                <item name="storageImpl" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Projekat" type="f1a62948:ProjectNode" />
+                <item name="storageImpl" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Projekat" type="f1a62948:ProjectNode" />
+                <item name="storageImpl" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Projekat" type="f1a62948:ProjectNode" />
+                <item name="storageImpl" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="publishing" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Projekat" type="f1a62948:ProjectNode" />
                 <item name="testApp" type="2d1252cf:ModuleNode" />
               </path>
               <path>
@@ -78,6 +110,12 @@
                 <item name="testApp" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Projekat" type="f1a62948:ProjectNode" />
+                <item name="testApp" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
               </path>
             </expand>
             <select />
@@ -126,6 +164,7 @@
     &quot;Gradle.Projekat:txtImpl [build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Projekat:txtImpl [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Faks/softverske komponente/Projekat/txtImpl/src/main/resources&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -136,6 +175,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -154,6 +194,28 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.Projekat:testApp [build]">
+    <configuration name="Projekat [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="Projekat:storageImpl [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -188,28 +250,6 @@
         <option name="taskNames">
           <list>
             <option value="publishToMavenLocal" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="Projekat:storageSpec [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/storageSpec" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -269,8 +309,8 @@
         <item itemvalue="Gradle.Projekat:testApp [build]" />
         <item itemvalue="Gradle.Projekat:storageImpl [publishToMavenLocal]" />
         <item itemvalue="Gradle.Projekat:storageImpl [build]" />
+        <item itemvalue="Gradle.Projekat [build]" />
         <item itemvalue="Gradle.Projekat:storageSpec [publishToMavenLocal]" />
-        <item itemvalue="Gradle.Projekat:storageSpec [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -293,7 +333,10 @@
       <workItem from="1731089732489" duration="604000" />
       <workItem from="1731090348412" duration="2784000" />
       <workItem from="1731103923344" duration="9544000" />
-      <workItem from="1731244609002" duration="4094000" />
+      <workItem from="1731244609002" duration="5691000" />
+      <workItem from="1731427255826" duration="687000" />
+      <workItem from="1731428167362" duration="2359000" />
+      <workItem from="1731512346254" duration="1801000" />
     </task>
     <task id="LOCAL-00001" summary="Poslednje Implementacije">
       <option name="closed" value="true" />
@@ -303,7 +346,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731105750791</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Komande storage i report implementirane">
+      <option name="closed" value="true" />
+      <created>1731251293567</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731251293568</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,6 +362,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Poslednje Implementacije" />
-    <option name="LAST_COMMIT_MESSAGE" value="Poslednje Implementacije" />
+    <MESSAGE value="Komande storage i report implementirane" />
+    <MESSAGE value="move i rename change" />
+    <option name="LAST_COMMIT_MESSAGE" value="move i rename change" />
   </component>
 </project>
