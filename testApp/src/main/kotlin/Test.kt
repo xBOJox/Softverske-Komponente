@@ -3,6 +3,8 @@ import com.google.gson.reflect.TypeToken
 import spec.ReportInterface
 import java.io.InputStreamReader
 import storageImpl
+import CalculationImpl
+
 import java.io.File
 import java.util.*
 
@@ -111,6 +113,14 @@ fun handleStorage(args: Array<String>) {
                 sortedFiles.forEach { println(it.fileName) }
             }
 
+            "store" -> {
+                if (args.size < 3) throw IllegalArgumentException("Usage: store <sourceFiles...> <targetPath>")
+                val sourceFiles = args.slice(1..args.size - 2)
+                val targetPath = args.last()
+                storage.storeFiles(sourceFiles, targetPath)
+                println("Stored files in: $targetPath")
+            }
+
             else -> {
                 println("""
                     Available commands:
@@ -132,6 +142,97 @@ fun handleStorage(args: Array<String>) {
     }
 }
 
+    fun handleReport(args: Array<String>) {
+        if (args.isEmpty()) {
+            println("""
+                Usage: report <json-file> [options]
+                Options:
+                  --title <title>     Set report title
+                  --summary <summary> Set report summary
+                  --no-header        Exclude header from report
+                  sum <column>        Calculate sum of column
+                  avg <column>        Calculate average of column
+                  count <column> <value>  Count rows with specific value in column
+            """.trimIndent())
+            return
+        }
+
+        val jsonFilePath = args[0]
+        val calculation = CalculationImpl()
+
+        try {
+            val inputStream = File(jsonFilePath).inputStream()
+            val reader = InputStreamReader(inputStream)
+            val data = prepareData(reader)
+            reader.close()
+
+            if (args.size > 1) {
+                when (args[1].lowercase()) {
+                    "sum" -> {
+                        if (args.size < 3) {
+                            println("Error: Missing column name for sum calculation")
+                            return
+                        }
+                        val columnName = args[2]
+                        val sum = calculation.calculateSum(data[columnName]!!.map { it.toInt() })
+                        println("Sum of $columnName: $sum")
+                    }
+                    "avg" -> {
+                        if (args.size < 3) {
+                            println("Error: Missing column name for average calculation")
+                            return
+                        }
+                        val columnName = args[2]
+                        val average = calculation.calculateAverage(data[columnName]!!.map { it.toInt() })
+                        println("Average of $columnName: $average")
+                    }
+                    "count" -> {
+                        if (args.size < 4) {
+                            println("Error: Missing column name and value for count calculation")
+                            return
+                        }
+                        val columnName = args[2]
+                        val value = args[3]
+                        val count = data[columnName]?.count { it == value } ?: 0
+                        println("Count of rows with value $value in $columnName: $count")
+                    }
+                    else -> {
+                        // Perform default report generation
+                        val storageFolder = "storage"
+                        val serviceLoader = ServiceLoader.load(ReportInterface::class.java)
+                        val exporterServices = mutableMapOf<String, ReportInterface>()
+                        serviceLoader.forEach { service ->
+                            exporterServices[service.implName] = service
+                        }
+                        exporterServices.forEach { (key, service) ->
+                            val outputFile = "$storageFolder/report.${key.lowercase()}"
+                            service.generateReport(data, outputFile, true)
+                            println("Generated report: $outputFile")
+                        }
+                        println("Available services: ${exporterServices.keys}")
+                    }
+                }
+            } else {
+                // Perform default report generation
+                val storageFolder = "storage"
+                val serviceLoader = ServiceLoader.load(ReportInterface::class.java)
+                val exporterServices = mutableMapOf<String, ReportInterface>()
+                serviceLoader.forEach { service ->
+                    exporterServices[service.implName] = service
+                }
+                exporterServices.forEach { (key, service) ->
+                    val outputFile = "$storageFolder/report.${key.lowercase()}"
+                    service.generateReport(data, outputFile, true)
+                    println("Generated report: $outputFile")
+                }
+                println("Available services: ${exporterServices.keys}")
+            }
+        } catch (e: Exception) {
+            println("Error generating report: ${e.message}")
+            e.printStackTrace()
+        }
+    }
+
 fun main(args: Array<String>) {
     if (args.isEmpty()) {
         println("""
@@ -149,44 +250,7 @@ fun main(args: Array<String>) {
     }
 }
 
-fun handleReport(args: Array<String>) {
-    if (args.isEmpty()) {
-        println("""
-            Usage: report <json-file> [options]
-            Options:
-              --title <title>     Set report title
-              --summary <summary> Set report summary
-              --no-header        Exclude header from report
-        """.trimIndent())
-        return
-    }
 
-    val jsonFilePath = args[0]
-    val serviceLoader = ServiceLoader.load(ReportInterface::class.java)
-    val exporterServices = mutableMapOf<String, ReportInterface>()
-
-    serviceLoader.forEach { service ->
-        exporterServices[service.implName] = service
-    }
-
-    try {
-        val inputStream = File(jsonFilePath).inputStream()
-        val reader = InputStreamReader(inputStream)
-        val data = prepareData(reader)
-        reader.close()
-        val storageFolder = "storage"
-        exporterServices.forEach { (key, service) ->
-            val outputFile = "$storageFolder/report.${key.lowercase()}"
-            service.generateReport(data, outputFile, true)
-            println("Generated report: $outputFile")
-        }
-
-        println("Available services: ${exporterServices.keys}")
-    } catch (e: Exception) {
-        println("Error generating report: ${e.message}")
-        e.printStackTrace()
-    }
-}
 
 // STARI
 //fun main() {

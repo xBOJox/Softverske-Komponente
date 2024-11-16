@@ -8,6 +8,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/CalculationsSpec" />
+            <option value="$PROJECT_DIR$/calculationImpl" />
             <option value="$PROJECT_DIR$/csvImpl" />
             <option value="$PROJECT_DIR$/excelImpl" />
             <option value="$PROJECT_DIR$/pdfImpl" />

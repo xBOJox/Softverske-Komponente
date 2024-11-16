@@ -7,7 +7,9 @@
     <list default="true" id="2b8a9345-969b-423a-b48a-e212ef534662" name="Changes" comment="move i rename change">
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storageImpl/src/main/kotlin/storageImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/storageImpl/src/main/kotlin/storageImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testApp/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/testApp/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testApp/src/main/kotlin/Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/testApp/src/main/kotlin/Test.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +52,12 @@
         <task path="$PROJECT_DIR$/storageImpl">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/CalculationsSpec">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/calculationImpl">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -60,36 +68,18 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Projekat" type="f1a62948:ProjectNode" />
+                <item name="calculationImpl" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Projekat" type="f1a62948:ProjectNode" />
+                <item name="calculationImpl" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Projekat" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build setup" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Projekat" type="f1a62948:ProjectNode" />
-                <item name="storageImpl" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Projekat" type="f1a62948:ProjectNode" />
-                <item name="storageImpl" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Projekat" type="f1a62948:ProjectNode" />
-                <item name="storageImpl" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Projekat" type="f1a62948:ProjectNode" />
-                <item name="storageImpl" type="2d1252cf:ModuleNode" />
+                <item name="calculationImpl" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="publishing" type="c8890929:TasksNode$1" />
               </path>
@@ -110,12 +100,6 @@
                 <item name="testApp" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Projekat" type="f1a62948:ProjectNode" />
-                <item name="testApp" type="2d1252cf:ModuleNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
               </path>
             </expand>
             <select />
@@ -148,6 +132,11 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Gradle.Projekat [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Projekat [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Projekat:CalculationsSpec [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Projekat:CalculationsSpec [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Projekat:calculationImpl [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Projekat:calculationImpl [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Projekat:csvImpl [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Projekat:excelImpl [build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Projekat:excelImpl [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
@@ -160,6 +149,7 @@
     &quot;Gradle.Projekat:storageImpl [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Projekat:storageSpec [build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Projekat:storageSpec [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Projekat:testApp [assemble].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Projekat:testApp [build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Projekat:txtImpl [build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Projekat:txtImpl [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
@@ -194,10 +184,10 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.Projekat:testApp [build]">
-    <configuration name="Projekat [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Projekat:CalculationsSpec [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/CalculationsSpec" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -216,32 +206,10 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Projekat:storageImpl [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Projekat:CalculationsSpec [publishToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/storageImpl" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="Projekat:storageImpl [publishToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/storageImpl" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/CalculationsSpec" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -260,10 +228,32 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Projekat:storageSpec [publishToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Projekat:calculationImpl [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/storageSpec" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/calculationImpl" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Projekat:calculationImpl [publishToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/calculationImpl" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -307,10 +297,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Projekat:testApp [build]" />
-        <item itemvalue="Gradle.Projekat:storageImpl [publishToMavenLocal]" />
-        <item itemvalue="Gradle.Projekat:storageImpl [build]" />
-        <item itemvalue="Gradle.Projekat [build]" />
-        <item itemvalue="Gradle.Projekat:storageSpec [publishToMavenLocal]" />
+        <item itemvalue="Gradle.Projekat:calculationImpl [build]" />
+        <item itemvalue="Gradle.Projekat:calculationImpl [publishToMavenLocal]" />
+        <item itemvalue="Gradle.Projekat:CalculationsSpec [publishToMavenLocal]" />
+        <item itemvalue="Gradle.Projekat:CalculationsSpec [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -337,6 +327,13 @@
       <workItem from="1731427255826" duration="687000" />
       <workItem from="1731428167362" duration="2359000" />
       <workItem from="1731512346254" duration="1801000" />
+      <workItem from="1731531476447" duration="797000" />
+      <workItem from="1731602758725" duration="5375000" />
+      <workItem from="1731703294983" duration="18000" />
+      <workItem from="1731703395827" duration="31000" />
+      <workItem from="1731703517900" duration="50000" />
+      <workItem from="1731703574902" duration="5397000" />
+      <workItem from="1731767634936" duration="669000" />
     </task>
     <task id="LOCAL-00001" summary="Poslednje Implementacije">
       <option name="closed" value="true" />
@@ -364,6 +361,6 @@
     <MESSAGE value="Poslednje Implementacije" />
     <MESSAGE value="Komande storage i report implementirane" />
     <MESSAGE value="move i rename change" />
-    <option name="LAST_COMMIT_MESSAGE" value="move i rename change" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>

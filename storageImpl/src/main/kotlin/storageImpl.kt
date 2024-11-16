@@ -39,11 +39,11 @@ class storageImpl : StorageInterface{
     override fun storeFiles(sourcePaths: List<String>, targetPath: String) {
         val targetDir = rootPath.resolve(targetPath)
         if (!targetDir.exists()) {
-            targetDir.createDirectories()
+            throw NoSuchFileException(targetDir.toString())
         }
 
         sourcePaths.forEach { sourcePath ->
-            val sourceFile = Paths.get(sourcePath)
+            val sourceFile = rootPath.resolve(sourcePath)
             if (!sourceFile.exists()) {
                 throw IllegalArgumentException("Source file does not exist: $sourcePath")
             }
