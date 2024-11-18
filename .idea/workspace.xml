@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b8a9345-969b-423a-b48a-e212ef534662" name="Changes" comment="move i rename change">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="2b8a9345-969b-423a-b48a-e212ef534662" name="Changes" comment="Final changes i kalkulacije">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storageImpl/src/main/kotlin/storageImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/storageImpl/src/main/kotlin/storageImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testApp/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/testApp/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/spec/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/src/main/kotlin/spec/ReportInterface.kt" beforeDir="false" afterPath="$PROJECT_DIR$/spec/src/main/kotlin/spec/ReportInterface.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testApp/src/main/kotlin/Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/testApp/src/main/kotlin/Test.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,6 +79,13 @@
                 <item name="Projekat" type="f1a62948:ProjectNode" />
                 <item name="calculationImpl" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Projekat" type="f1a62948:ProjectNode" />
+                <item name="calculationImpl" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="publishing" type="c8890929:TasksNode$1" />
               </path>
               <path>
@@ -137,12 +142,14 @@
     &quot;Gradle.Projekat:CalculationsSpec [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Projekat:calculationImpl [build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Projekat:calculationImpl [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Projekat:csvImpl [build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Projekat:csvImpl [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Projekat:excelImpl [build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Projekat:excelImpl [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Projekat:pdfImpl [build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Projekat:pdfImpl [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Projekat:spec [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Projekat:spec [javadoc].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Projekat:spec [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Projekat:storageImpl [buildDependents].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Projekat:storageImpl [build].executor&quot;: &quot;Run&quot;,
@@ -183,29 +190,7 @@
       <recent name="C:\Faks\softverske komponente\Projekat\txtImpl\src\main\resources\META-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Projekat:testApp [build]">
-    <configuration name="Projekat:CalculationsSpec [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/CalculationsSpec" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.Projekat:spec [javadoc]">
     <configuration name="Projekat:CalculationsSpec [publishToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -272,6 +257,28 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="Projekat:spec [javadoc]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spec" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="javadoc" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="Projekat:testApp [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -296,11 +303,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Projekat:spec [javadoc]" />
         <item itemvalue="Gradle.Projekat:testApp [build]" />
-        <item itemvalue="Gradle.Projekat:calculationImpl [build]" />
         <item itemvalue="Gradle.Projekat:calculationImpl [publishToMavenLocal]" />
+        <item itemvalue="Gradle.Projekat:calculationImpl [build]" />
         <item itemvalue="Gradle.Projekat:CalculationsSpec [publishToMavenLocal]" />
-        <item itemvalue="Gradle.Projekat:CalculationsSpec [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -333,7 +340,8 @@
       <workItem from="1731703395827" duration="31000" />
       <workItem from="1731703517900" duration="50000" />
       <workItem from="1731703574902" duration="5397000" />
-      <workItem from="1731767634936" duration="669000" />
+      <workItem from="1731767634936" duration="1507000" />
+      <workItem from="1731793395283" duration="4874000" />
     </task>
     <task id="LOCAL-00001" summary="Poslednje Implementacije">
       <option name="closed" value="true" />
@@ -351,7 +359,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731251293568</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Final changes i kalkulacije">
+      <option name="closed" value="true" />
+      <created>1731768459686</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731768459686</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,6 +377,7 @@
     <MESSAGE value="Poslednje Implementacije" />
     <MESSAGE value="Komande storage i report implementirane" />
     <MESSAGE value="move i rename change" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Final changes i kalkulacije" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final changes i kalkulacije" />
   </component>
 </project>

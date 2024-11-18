@@ -8,7 +8,10 @@ import java.sql.ResultSetMetaData
  * Implementations of this interface should define how the report is formatted and saved.
  */
 interface ReportInterface {
-
+    /**
+    *
+    * Name of the implementation, for example "PDF"
+     */
     val implName: String
     /**
      * Generates a report based on the provided data and writes it to the specified destination.
@@ -22,30 +25,41 @@ interface ReportInterface {
      */
     fun generateReport(data: Map<String, List<String>>, destination: String, header: Boolean, title: String? = null, summary: String? = null)
 
-
+    /**
+    *Generates a report based on the provided ResultSet and writes it to the specified destination.*
+    *@param data The ResultSet containing the data to be included in the report.
+    *Each row represents a record, and each column represents a field.
+    *@param destination The file path where the generated report will be saved.
+    *The report format (e.g., PDF, Excel) depends on the specific implementation.
+    *@param header A flag indicating whether to include column headers in the report.
+    *If true, the headers will be derived from the ResultSet metadata.
+    *@param title An optional title for the report. Used only in formatted reports (e.g., PDF, Excel).
+    *@param summary An optional summary for the report. Provides additional context or an overview in formatted reports.
+     * */
     fun generateReport(data: ResultSet, destination: String, header: Boolean, title: String? = null, summary: String? = null){
         val preparedData = prepareData(data)
         generateReport(preparedData, destination, header, title, summary)
     }
 
-    private fun prepareData(resultSet: ResultSet): Map<String, List<String>> {
-        val reportData = mutableMapOf<String, MutableList<String>>()
+}
 
-        val metaData: ResultSetMetaData = resultSet.metaData
-        val columnCount = metaData.columnCount
+private fun prepareData(resultSet: ResultSet): Map<String, List<String>> {
+    val reportData = mutableMapOf<String, MutableList<String>>()
 
+    val metaData: ResultSetMetaData = resultSet.metaData
+    val columnCount = metaData.columnCount
+
+    for (i in 1..columnCount) {
+        val columnName = metaData.getColumnName(i)
+        reportData[columnName] = mutableListOf()
+    }
+
+    while (resultSet.next()) {
         for (i in 1..columnCount) {
             val columnName = metaData.getColumnName(i)
-            reportData[columnName] = mutableListOf()
+            reportData[columnName]!!.add(resultSet.getString(i))
         }
-
-        while (resultSet.next()) {
-            for (i in 1..columnCount) {
-                val columnName = metaData.getColumnName(i)
-                reportData[columnName]!!.add(resultSet.getString(i))
-            }
-        }
-
-        return reportData
     }
+
+    return reportData
 }

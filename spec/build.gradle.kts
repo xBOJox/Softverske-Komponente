@@ -1,8 +1,11 @@
 plugins {
     kotlin("jvm")
     `java-library`
+    id("org.jetbrains.dokka") version "1.8.10"
     `maven-publish`
 }
+
+
 
 group = "rs.raf"
 version = "1.0-SNAPSHOT"
@@ -18,6 +21,19 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
+
+tasks.javadoc {
+    dependsOn(tasks.dokkaJavadoc)
+    doLast {
+        println("Javadoc task completed with Dokka output.")
+    }
+}
+
+tasks.dokkaJavadoc {
+    outputDirectory.set(file("build/dokka/javadoc")) // Set the output directory
+}
+
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {

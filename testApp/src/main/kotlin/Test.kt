@@ -212,7 +212,7 @@ fun handleStorage(args: Array<String>) {
                         println("Available services: ${exporterServices.keys}")
                     }
                 }
-            } else {
+            } else{
                 // Perform default report generation
                 val storageFolder = "storage"
                 val serviceLoader = ServiceLoader.load(ReportInterface::class.java)
